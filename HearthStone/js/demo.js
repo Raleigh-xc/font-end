@@ -5,7 +5,7 @@ $(function(){
         /*Ajax数据请求*/
         $.ajax({
             url: 'data/demo.json',
-            type: 'POST',
+            type: 'GET',
             success: function(response,status,xhr){
                 if(status == 'success'){
 

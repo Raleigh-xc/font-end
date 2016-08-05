@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+/* reset */
+body,ul,ol,p,h1,h2,h3,h4,h5,h6{margin: 0;padding: 0;}
+
+body{background: #111;font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif}
+li{list-style: none;}
+a{text-decoration: none;}
+b,strong{font-weight: normal;}
+i,em{font-style: normal;}
+.clear:after{content: '';display: block;clear: both;}
+.fr{float: right;}
+.fl{float: left;}
+
+/* #banner */
+#banner{width: 100%;height: 600px;background: url(../img/banner.jpg) no-repeat center top;position: relative;}
+
+#banner .logo{display: block;position: absolute;top: 10px;left: 75px;}
+#banner .logo img{width: 155px;}
+
+#banner .user{height: 44px;padding: 0 8px;background: rgba(80,60,40,0.5);position: absolute;top: 0;right: 74px;}
+#banner .user div{height: 44px;line-height: 44px;}
+#banner .user span{color: #7eadc1;font-size: 14px;}
+#banner .user a{color: #e5c690;font-size: 12px;padding: 0 10px;}
+#banner .user a:hover{color: #fff;}
+
+#banner .nav{width: 100%;height: 60px;background: rgba(145,105,59,0.8);position: absolute;left: 0;bottom: 0;z-index: 9999;}
+#banner .nav-fix{position: fixed;left: 0;top: 0;}
+#banner .nav-list{padding-left: 75px;}
+#banner .nav-list li{width: 171px;float: left;}
+#banner .nav-list a{display: block;color: #111;line-height: 52px;text-align: center;font-weight: 700;padding-top: 4px;border-bottom: 4px solid transparent;font-size: 18px;}
+#banner .nav-list a:hover{color: #fff;border-bottom: 4px solid #F3C36D;}
+#banner li.last_item{width: 150px;border-top: 1px solid #c4964b;background: linear-gradient(#774618,#FBCB72);position: relative;}
+#banner li.last_item a,#banner li.last_item a:hover{color: #111;line-height: 59px;padding-top: 0;
+border-bottom: none;}
+#banner .nav-list img{position: absolute;right: -70px;bottom: 0;}
+
+/* #guess-banner */
+#guess-banner{width: 100%;height: 244px;background: url(../img/guess_banner.jpg) no-repeat center top;position: relative;border-bottom: 4px solid #8f6738;}
+
+#guess-banner .wrap{width: 266px;position: absolute;left: 245px;bottom: 46px;}
+#guess-banner p{font-size: 36px;text-align: center;color: #f3c36d;font-weight: 700;margin-bottom: 16px;}
+#guess-banner span{font-size: 42px;color: #fff;}
+#guess-banner strong{display: block;font-size: 16px;color: #92612a;text-align: center;margin-bottom: 10px;}
+#guess-banner a{display: block;color: #fff;width: 125px;height: 36px;border:1px solid #f3c36d;border-radius: 3px;font-size: 16px;line-height: 36px;text-align: center;}
+#guess-banner a:hover{}
+
+/* #guess-content */
+#guess-content{background: url(../img/guess_bg.jpg) no-repeat center top #171612;padding: 30px 0 22px 75px;}
+
+#guess-list{margin-bottom: 60px;}
+#guess-list h3{height: 34px;font-size: 26px;color: #fff;background: url(../img/title_bg.png) no-repeat left 5px; padding-left: 18px;padding-bottom: 24px;}
+#guess-list ul{background: #0e0d0c;width: 1200px;padding: 24px 0 10px 0;}
+#guess-list li{float: left;padding: 0 40px 40px 59px;width: 501px;height: 114px;background: url(../img/guess_item.jpg) 39px top no-repeat;}
+#guess-list .match-info{height: 32px;line-height: 32px; color: #af8549;}
+#guess-list .match-info .title{width: 350px;display: inline-block;font-size: 14px;}
+#guess-list .match-info .status{font-size: 16px;font-weight: 700;color: #fff;padding-left:28px;}
+#guess-list .players{height: 79px;width: 327px;position: relative;}
+#guess-list .player1{height: 39px;line-height: 39px;position: relative;}
+#guess-list .player2{margin-top: 1px;height: 39px;line-height: 39px;position: relative;}
+#guess-list .players .name{font-size: 16px;font-weight: 700;color: #fff;}
+#guess-list .players b{}
+#guess-list .players i{display: block;width:24px;height:39px;background: url(../img/main_icon.png) no-repeat -267px -2px;top: 0;right: 0;position: absolute;}
+#guess-list .players .winner{display: block;width:50px;height:39px;background: url(../img/main_icon.png) no-repeat -217px -38px;top: 0;right: 24px;position: absolute;}
+#guess-list .players .selected{background-position: -267px -38px;}
+#guess-list .guess-result{width: 160px;height: 80px;position: absolute;top: 0;right: -174px;line-height: 80px;text-align: center;color: #9b9b9b;font-size: 14px;font-weight: 700;}
+#guess-list .no-guess{font-size: 20px;}
+#guess-list .guess-right strong{display: inline-block;width: 42px;height: 42px;background: url(../img/main_icon.png) -145px -181px;vertical-align: middle;margin-right: 10px;}
+#guess-list .guess-wrong strong{display: inline-block;width: 42px;height: 42px;background: url(../img/main_icon.png) -193px -181px;vertical-align: middle;margin-right: 10px;}
+
+#guess-schedule h3,#guess-rule h3{height: 34px;font-size: 26px;color: #fff;background: url(../img/title_bg.png) no-repeat left 5px; padding-left: 18px;padding-bottom: 28px;}
+#guess-schedule p,#guess-rule p{font-size: 16px;line-height: 30px;color: #92612a;padding-left: 23px;}
+
+#guess-schedule{margin-bottom: 20px;}
+
+#guess-rule{}
+#guess-rule .indent1{text-indent: 0.5em;}
+#guess-rule .indent2{text-indent: 2.5em;}
+
+/* #footer */
+#footer{background: #041624;padding-top: 48px;border-top: 1px solid #112234;}
+
+#footer .online{height: 24px;padding: 0 188px 0 174px;}
+#footer .online>a{display: inline-block;color: #ccc;font-size: 14px;line-height:24px;background: url(../img/online.png) no-repeat 0 3px; padding-left: 30px;height: 24px;margin-right: 34px;}
+#footer .online>a:hover{color: #fefefe;}
+#footer a.online2{background-position: 0 -25px;}
+#footer .online p{float: right;height: 24px;font-size: 14px;color: #ccc;line-height: 24px;}
+#footer .online p a{padding-right: 5px;}
+#footer .online .icon-intel{display: inline-block;height: 24px;width: 28px;background: url(../img/brand.png) no-repeat 0 0;vertical-align: middle;}
+#footer .online .icon-samsung{display: inline-block;height: 24px;width: 84px;background: url(../img/brand.png) no-repeat -39px 0;vertical-align: middle;}
+#footer .online .icon-msi{display: inline-block;height: 24px;width: 53px;background: url(../img/brand.png) no-repeat -134px 0;vertical-align: middle;}
+#footer .online .icon-razer{display: inline-block;height: 24px;width: 84px;background: url(../img/brand.png) no-repeat -196px 0;vertical-align: middle;}
+#footer .online .icon-asus{display: inline-block;height: 24px;width: 51px;background: url(../img/brand.png) no-repeat -290px 0;vertical-align: middle;}
+#footer .online .last-icon{display: inline-block;height: 24px;width: 16px;background: url(../img/online.png) no-repeat 0 -53px;vertical-align: middle;}
+
+#footer .copyright{margin-top: 70px;padding-left: 194px;}
+#footer .copyright>a{display: inline-block;vertical-align: middle;}
+#footer .copyright-bz{}
+#footer .copyright-bz img{width: 117px;}
+#footer .copyright-163{margin-left: 24px;}
+#footer .copyright-163 img{width: 105px;}
+#footer .copyright-info{display: inline-block;vertical-align: middle;margin-left: 73px;}
+#footer .copyright-info span{font-size: 14px;color: #ccc;margin-left: -10px;margin-bottom: 5px;display: block;}
+#footer .copyright-info span a{font-size: 14px;color: #ccc;padding:0 10px;}
+#footer .copyright-info span a:hover{}
+#footer .copyright-info p{color: #274a67;font-size: 10px;line-height: 24px;}
+#footer .integrity{margin-top: 11px;}
+#footer .integrity li{float: left;margin-right: 8px;}
+#footer .integrity a{}
+
+#footer .tips{padding: 19px 0 34px 0;}
+#footer .tips p{color: #374754;font-size: 10px;line-height: 18px;text-align: center}

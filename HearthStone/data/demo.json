@@ -1,0 +1,116 @@
+[
+
+    {
+        "title": "7月31日&nbsp;总决赛半决赛",
+        "status": "竞猜已结束",
+        "players": ["XHope","eStarJasonZ"],
+        "winner": 1,
+        "selected": -1,
+        "result": "no-guess"
+    },
+    {
+        "title": "7月31日&nbsp;总决赛半决赛",
+        "status": "竞猜已结束",
+        "players": ["EDGbingxuan","同福丶好学生张博"],
+        "winner": 1,
+        "selected": -1,
+        "result": "no-guess"
+    },
+    {
+        "title": "7月30日&nbsp;总决赛1/4决赛",
+        "status": "竞猜已结束",
+        "players": ["武藤游戏","同福丶好学生张博"],
+        "winner": 1,
+        "selected": -1,
+        "result": "no-guess"
+    },
+    {
+        "title": "7月30日&nbsp;总决赛1/4决赛",
+        "status": "竞猜已结束",
+        "players": ["SHRoyalXiuX","EDGbingxuan"],
+        "winner": 1,
+        "selected": -1,
+        "result": "no-guess"
+    },
+    {
+        "title": "7月29日&nbsp;16进8下半区胜者组第一轮",
+        "status": "竞猜已结束",
+        "players": ["silence","Betray"],
+        "winner": 0,
+        "selected": -1,
+        "result": "no-guess"
+    },
+    {
+        "title": "7月29日&nbsp;16进8下半区胜者组第一轮",
+        "status": "竞猜已结束",
+        "players": ["iGxingsu","eStarJasonZ"],
+        "winner": 1,
+        "selected": -1,
+        "result": "no-guess"
+    },
+    {
+        "title": "7月28日&nbsp;16进8上半区胜者组第一轮",
+        "status": "竞猜已结束",
+        "players": ["XHope","武藤游戏"],
+        "winner": 1,
+        "selected": -1,
+        "result": "no-guess"
+    },
+    {
+        "title": "7月28日&nbsp;16进8上半区胜者组第一轮",
+        "status": "竞猜已结束",
+        "players": ["WENightWalk","SHRoyalXiuX"],
+        "winner": 1,
+        "selected": -1,
+        "result": "no-guess"
+    },
+    {
+        "title": "7月24日&nbsp;16进8下半区第一轮",
+        "status": "竞猜已结束",
+        "players": ["silence","EDGbingxuan"],
+        "winner": 0,
+        "selected": 1,
+        "result": "guess-wrong"
+    },
+    {
+        "title": "7月24日&nbsp;16进8下半区第一轮",
+        "status": "竞猜已结束",
+        "players": ["同福丶好学生张博","eStarJasonZ"],
+        "winner": 1,
+        "selected": 0,
+        "result": "guess-wrong"
+    },
+    {
+        "title": "7月24日&nbsp;16进8下半区第一轮",
+        "status": "竞猜已结束",
+        "players": ["iGxingsu","OMGsuiyue"],
+        "winner": 0,
+        "selected": 0,
+        "result": "guess-right"
+    },
+    {
+        "title": "7月23日&nbsp;16进8上半区第一轮",
+        "status": "竞猜已结束",
+        "players": ["武藤游戏","breath"],
+        "winner": 0,
+        "selected": -1,
+        "result": "no-guess"
+    },
+    {
+        "title": "7月23日&nbsp;16进8上半区第一轮",
+        "status": "竞猜已结束",
+        "players": ["NewbeeRuoji","SHRoyalXiuX"],
+        "winner": 1,
+        "selected": -1,
+        "result": "no-guess"
+    },
+    {
+        "title": "7月23日&nbsp;16进8上半区第一轮",
+        "status": "竞猜已结束",
+        "players": ["WENightWalk","NewbeeMieGod"],
+        "winner": 0,
+        "selected": -1,
+        "result": "no-guess"
+    }
+
+]

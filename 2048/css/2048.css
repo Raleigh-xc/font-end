@@ -1,0 +1,147 @@
+body{
+    background: url(../img/background.jpg) #2f2f2f no-repeat center top;
+    padding: 0;
+    margin: 0;
+}
+
+#nav{
+    width: 200px;
+    height: 500px;
+    border-radius: 10px;
+    background: #bbada0;
+    position: absolute;
+    top: 0;
+    left: -240px;
+    font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif;
+}
+
+#nav strong{
+    margin: 20px auto;
+    display: block;
+    width: 160px;
+    height: 100px;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 100px;
+    background: #ecc400;
+    color: #fff;
+    font-size: 50px;
+}
+
+#nav a{
+    margin: 20px auto;
+    display: block;
+    width: 160px;
+    height: 50px;
+    background: #8f7a66;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+#nav a:hover{
+    background: #9f8b77;
+}
+
+.score, .history-score{
+    background: #8f7a66;
+    margin: 20px auto;
+    width: 160px;
+    border-radius: 6px;
+}
+
+
+.score p:nth-child(1), .history-score p:nth-child(1){
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    color: #eee4d5;
+    text-align: center;
+}
+
+.score p:nth-child(2), .history-score p:nth-child(2){
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    font-size: 30px;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+
+#nav span{
+    margin: 20px auto;
+    display: block;
+    width: 160px;
+    height: 90px;
+    background: #8f7a66;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 22px;
+}
+
+#grid-container{
+    width: 500px;
+    height: 500px;
+    margin: 60px auto;
+    border-radius: 10px;
+    background: #bbada0;
+    position: relative;
+}
+
+.grid-cell{
+    height: 100px;
+    width: 100px;
+    border-radius: 6px;
+    background: #ccc0b3;
+    position: absolute;
+}
+
+.num-cell{
+    height: 100px;
+    width: 100px;
+    border-radius: 6px;
+    position: absolute;
+    text-align: center;
+    line-height: 100px;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif;
+}
+
+#wrap{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    display: none;
+    color: #fff;
+    font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#wrap p{
+    margin-top: 100px;
+}
+
+.blur{
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}

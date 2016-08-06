@@ -2,6 +2,8 @@
 //--
 //------------------
 var aNumCells = [];
+var aHandledCells = [];
+var bGameOver = false;
 
 $(function(){
 
@@ -76,6 +78,9 @@ function initNumCells(){
     $(".num-cell").remove();
 
     for( var i = 0;i < 4 ; i++){
+
+        aHandledCells[i] = [];
+
         for( var j = 0;j < 4 ; j++){
 
             var pos = getPosition(i,j);
@@ -84,7 +89,7 @@ function initNumCells(){
             $('#grid-container').append(sNumCell);
             var oNumCell = $('#num-cell-'+i+'-'+j);
 
-            aNumCells[i][j].isHandled = false;
+            aHandledCells[i][j] = false;
             
             if(aNumCells[i][j] == 0 ){
                 oNumCell.css({
@@ -137,6 +142,12 @@ function generateOneNum(){
 
 $(document).keydown(function(evt){
 
+    if(bGameOver && evt.keyCode == 13){
+        $('#wrap').hide();
+        $('#grid-container').removeClass('blur');
+        newGame();
+    }
+
     for( var i = 0;i < 4 ; i++){
         for( var j = 0;j < 4 ; j++){
             if( $('#num-cell-'+i+'-'+j).is(':animated') ){
@@ -182,20 +193,20 @@ function moveLeft(){
                         showNumCellMove(i,j,i,k);
                         aNumCells[i][k] = aNumCells[i][j];
                         aNumCells[i][j] = 0;
-                        continue;
+                        break;
                     }
                     /*case2*/
-                    if(aNumCells[i][k] == aNumCells[i][j] && noBlockHorizontal(i,k,j) && !aNumCells[i][k].isHandled){
+                    if(aNumCells[i][k] == aNumCells[i][j] && noBlockHorizontal(i,k,j) && !aHandledCells[i][k]){
                         showNumCellMove(i,j,i,k);
                         aNumCells[i][k] += aNumCells[i][j];
                         aNumCells[i][j] = 0;
 
-                        aNumCells[i][k].isHandled = true;
+                        aHandledCells[i][k] = true;
 
                         //add score
                         updateScore(aNumCells[i][k]);
 
-                        continue;
+                        break;
                     }
 
                 }
@@ -227,20 +238,20 @@ function moveRight(){
                         showNumCellMove(i,j,i,k);
                         aNumCells[i][k] = aNumCells[i][j];
                         aNumCells[i][j] = 0;
-                        continue;
+                        break;
                     }
                     /*case2*/
-                    if(aNumCells[i][k] == aNumCells[i][j] && noBlockHorizontal(i,j,k) && !aNumCells[i][k].isHandled){
+                    if(aNumCells[i][k] == aNumCells[i][j] && noBlockHorizontal(i,j,k) && !aHandledCells[i][k]){
                         showNumCellMove(i,j,i,k);
                         aNumCells[i][k] += aNumCells[i][j];
                         aNumCells[i][j] = 0;
 
-                        aNumCells[i][k].isHandled = true;
+                        aHandledCells[i][k] = true;
 
                         //add score
                         updateScore(aNumCells[i][k]);
 
-                        continue;
+                        break;
                     }
 
                 }
@@ -272,20 +283,20 @@ function moveTop(){
                         showNumCellMove(i,j,k,j);
                         aNumCells[k][j] = aNumCells[i][j];
                         aNumCells[i][j] = 0;
-                        continue;
+                        break;
                     }
                     /*case2*/
-                    if(aNumCells[k][j] == aNumCells[i][j] && noBlockVertical(j,k,i) && !aNumCells[k][j].isHandled){
+                    if(aNumCells[k][j] == aNumCells[i][j] && noBlockVertical(j,k,i) && !aHandledCells[k][j]){
                         showNumCellMove(i,j,k,j);
                         aNumCells[k][j] += aNumCells[i][j];
                         aNumCells[i][j] = 0;
 
-                        aNumCells[k][j].isHandled = true;
+                        aHandledCells[k][j] = true;
 
                         //add score
                         updateScore(aNumCells[k][j]);
 
-                        continue;
+                        break;
                     }
 
                 }
@@ -317,20 +328,20 @@ function moveDown(){
                         showNumCellMove(i,j,k,j);
                         aNumCells[k][j] = aNumCells[i][j];
                         aNumCells[i][j] = 0;
-                        continue;
+                        break;
                     }
                     /*case2*/
-                    if(aNumCells[k][j] == aNumCells[i][j] && noBlockVertical(j,i,k) && !aNumCells[k][j].isHandled){
+                    if(aNumCells[k][j] == aNumCells[i][j] && noBlockVertical(j,i,k) && !aHandledCells[k][j]){
                         showNumCellMove(i,j,k,j);
                         aNumCells[k][j] += aNumCells[i][j];
                         aNumCells[i][j] = 0;
 
-                        aNumCells[k][j].isHandled = true;
+                        aHandledCells[k][j] = true;
 
                         //add score
                         updateScore(aNumCells[k][j]);
 
-                        continue;
+                        break;
                     }
 
                 }
@@ -350,12 +361,15 @@ function isGameOver(){
     if(noSpace() && !canMoveLeft() && !canMoveRight() && !canMoveTop() && !canMoveDown()){
         $('#wrap').show();
         $('#grid-container').addClass('blur');
+        bGameOver = true;
     }
 }
 
 function newGame(){
     //重置分数
     $('.score').find('p').eq(1).text(0);
+
+    bGameOver = false;
 
     initDataArray();
     initNumCells();
@@ -556,8 +570,6 @@ function updateScore(score){
     $('.score').find('p').eq(1).text(iScore);
 
     var iMaxScore = $('.history-score').find('p').eq(1).text();
-
-    console.log(iScore+':'+iMaxScore);
 
     if(iScore > iMaxScore){
         $('.history-score').find('p').eq(1).text(iScore);

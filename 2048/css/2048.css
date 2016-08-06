@@ -1,45 +1,62 @@
-body{
-    background: url(../img/background.jpg) #2f2f2f no-repeat center top;
+/* reset */
+body,p{
     padding: 0;
     margin: 0;
 }
 
+/* public */
+body{
+    background: url(../img/background.jpg) #2f2f2f no-repeat center top;
+    font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif;
+}
+
+.clear:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* game-box */
+#game-box{
+    width: 720px;
+    height: 500px;
+    margin: 50px auto;
+    position: relative;
+}
+
+/* #nav */
 #nav{
-    width: 200px;
+    width: 160px;
     height: 500px;
     border-radius: 10px;
     background: #bbada0;
     position: absolute;
     top: 0;
-    left: -240px;
-    font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif;
+    left: 0;
+    padding: 0 20px;
+}
+
+#nav strong,#nav a,#nav span{
+    display: block;
+    border-radius: 6px;
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
 }
 
 #nav strong{
-    margin: 20px auto;
-    display: block;
-    width: 160px;
     height: 100px;
-    border-radius: 6px;
-    text-align: center;
     line-height: 100px;
     background: #ecc400;
-    color: #fff;
     font-size: 50px;
 }
 
 #nav a{
-    margin: 20px auto;
-    display: block;
-    width: 160px;
     height: 50px;
     background: #8f7a66;
-    border-radius: 6px;
-    text-align: center;
     line-height: 50px;
     text-decoration: none;
     font-size: 20px;
-    color: #fff;
     font-weight: bold;
 }
 
@@ -49,15 +66,12 @@ body{
 
 .score, .history-score{
     background: #8f7a66;
-    margin: 20px auto;
-    width: 160px;
     border-radius: 6px;
+    margin-top: 20px;
 }
 
 
 .score p:nth-child(1), .history-score p:nth-child(1){
-    margin: 0;
-    padding: 0;
     height: 30px;
     font-size: 20px;
     line-height: 30px;
@@ -66,8 +80,6 @@ body{
 }
 
 .score p:nth-child(2), .history-score p:nth-child(2){
-    margin: 0;
-    padding: 0;
     height: 40px;
     font-size: 30px;
     line-height: 40px;
@@ -77,26 +89,21 @@ body{
 }
 
 #nav span{
-    margin: 20px auto;
-    display: block;
-    width: 160px;
     height: 90px;
     background: #8f7a66;
-    border-radius: 6px;
-    text-align: center;
-    font-size: 12px;
-    color: #fff;
+    font-size: 16px;
     font-weight: bold;
-    line-height: 22px;
+    line-height: 30px;
 }
 
 #grid-container{
     width: 500px;
     height: 500px;
-    margin: 60px auto;
     border-radius: 10px;
     background: #bbada0;
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .grid-cell{

@@ -1,0 +1,113 @@
+/* 
+    -------------------------------
+ */
+
+/* game-box */
+#game-box{
+    width: 500px;
+    position: relative;
+    margin-top: 20px;
+}
+
+/* #nav */
+#nav{
+    height: 220px;
+    width: 100%;
+    border-radius: 10px;
+    background: #bbada0;
+    position: relative;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+#nav strong,#nav a{
+    display: block;
+    border-radius: 6px;
+    text-align: center;
+    color: #fff;
+    margin: 20px;
+    width: 200px;
+    float: left;
+}
+
+#nav strong{
+    height: 90px;
+    line-height: 90px;
+    background: #ecc400;
+    font-size: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#nav a{
+    height: 90px;
+    background: #8f7a66;
+    line-height: 90px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#nav a:hover{
+    background: #9f8b77;
+}
+
+.score, .history-score{
+    background: #8f7a66;
+    border-radius: 6px;
+    margin: 20px;
+    width: 200px;
+}
+
+.score{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.history-score{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+
+.score p:nth-child(1), .history-score p:nth-child(1){
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    color: #eee4d5;
+    text-align: center;
+}
+
+.score p:nth-child(2), .history-score p:nth-child(2){
+    height: 40px;
+    font-size: 30px;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+
+#nav span{
+    height: 90px;
+    background: #8f7a66;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 30px;
+    display: none;
+}
+
+#grid-container{
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    background: #bbada0;
+    position: relative;
+    top: 0;
+    right: 0;
+}

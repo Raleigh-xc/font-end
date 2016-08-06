@@ -8,8 +8,6 @@ var bGameOver = false;
 var bTouchMoveEvent = false;
 var bTouchEndEvent = false;
 
-var count = 0;
-
 /*初始化设备信息*/
 var iBoxWidth = 720;
 var iBoxHeight = 500;
@@ -31,9 +29,9 @@ var oTouchEvent = {
 $(function(){
 
     initSelfAdaption();
-    //console.log(aNumCells);
+
     initContrainer();
-    //console.log(aNumCells);
+
     initDataArray();
     initNumCells();
 
@@ -104,8 +102,6 @@ function initDataArray(){
 }
 
 function initNumCells(){
-
-    console.log(aNumCells);
 
     $(".num-cell").remove();
 
@@ -568,8 +564,6 @@ function doSomeThing(evt){
             moveTop();
         }
     }
-
-    document.title = count++;
 
     bTouchMoveEvent = true;
 

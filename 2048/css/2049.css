@@ -6,7 +6,7 @@
 #game-box{
     width: 500px;
     position: relative;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 /* #nav */
@@ -52,9 +52,9 @@
     right: 0;
 }
 
-#nav a:hover{
+/*#nav a:hover{
     background: #9f8b77;
-}
+}*/
 
 .score, .history-score{
     background: #8f7a66;

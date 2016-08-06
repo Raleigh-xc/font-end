@@ -60,9 +60,9 @@ body{
     font-weight: bold;
 }
 
-#nav a:hover{
+/*#nav a:hover{
     background: #9f8b77;
-}
+}*/
 
 .score, .history-score{
     background: #8f7a66;

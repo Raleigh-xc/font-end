@@ -15,10 +15,12 @@ i,em{font-style: normal;}
 /* #banner */
 #banner{width: 100%;height: 600px;background: url(../img/banner.jpg) no-repeat center top;position: relative;}
 
-#banner .logo{display: block;position: absolute;top: 10px;left: 75px;}
+#sub-banner{width:1200px;position: relative;margin: 0 auto;}
+
+#banner .logo{display: block;position: absolute;top: 10px;left: 0px;}
 #banner .logo img{width: 155px;}
 
-#banner .user{height: 44px;padding: 0 8px;background: rgba(80,60,40,0.5);position: absolute;top: 0;right: 74px;}
+#banner .user{height: 44px;padding: 0 8px;background: rgba(80,60,40,0.5);position: absolute;top: 0;right: 0px;}
 #banner .user div{height: 44px;line-height: 44px;}
 #banner .user span{color: #7eadc1;font-size: 14px;}
 #banner .user a{color: #e5c690;font-size: 12px;padding: 0 10px;}
@@ -26,7 +28,7 @@ i,em{font-style: normal;}
 
 #banner .nav{width: 100%;height: 60px;background: rgba(145,105,59,0.8);position: absolute;left: 0;bottom: 0;z-index: 9999;}
 #banner .nav-fix{position: fixed;left: 0;top: 0;}
-#banner .nav-list{padding-left: 75px;}
+#banner .nav-list{width: 1200px;margin: 0 auto;overflow: hidden;}
 #banner .nav-list li{width: 171px;float: left;}
 #banner .nav-list a{display: block;color: #111;line-height: 52px;text-align: center;font-weight: 700;padding-top: 4px;border-bottom: 4px solid transparent;font-size: 18px;}
 #banner .nav-list a:hover{color: #fff;border-bottom: 4px solid #F3C36D;}
@@ -46,9 +48,9 @@ border-bottom: none;}
 #guess-banner a:hover{}
 
 /* #guess-content */
-#guess-content{background: url(../img/guess_bg.jpg) no-repeat center top #171612;padding: 30px 0 22px 75px;}
+#guess-content{background: url(../img/guess_bg.jpg) no-repeat center top #171612;padding: 30px 0 22px 0px;}
 
-#guess-list{margin-bottom: 60px;}
+#guess-list{margin:0 auto 60px;width: 1200px;}
 #guess-list h3{height: 34px;font-size: 26px;color: #fff;background: url(../img/title_bg.png) no-repeat left 5px; padding-left: 18px;padding-bottom: 24px;}
 #guess-list ul{background: #0e0d0c;width: 1200px;padding: 24px 0 10px 0;}
 #guess-list li{float: left;padding: 0 40px 40px 59px;width: 501px;height: 114px;background: url(../img/guess_item.jpg) 39px top no-repeat;}
@@ -71,14 +73,16 @@ border-bottom: none;}
 #guess-schedule h3,#guess-rule h3{height: 34px;font-size: 26px;color: #fff;background: url(../img/title_bg.png) no-repeat left 5px; padding-left: 18px;padding-bottom: 28px;}
 #guess-schedule p,#guess-rule p{font-size: 16px;line-height: 30px;color: #92612a;padding-left: 23px;}
 
-#guess-schedule{margin-bottom: 20px;}
+#guess-schedule{margin:0 auto 20px;width: 1200px;}
 
-#guess-rule{}
+#guess-rule{margin:0 auto;width: 1200px;}
 #guess-rule .indent1{text-indent: 0.5em;}
 #guess-rule .indent2{text-indent: 2.5em;}
 
 /* #footer */
 #footer{background: #041624;padding-top: 48px;border-top: 1px solid #112234;}
+
+#sub-footer{width: 1200px;margin: 0 auto;}
 
 #footer .online{height: 24px;padding: 0 188px 0 174px;}
 #footer .online>a{display: inline-block;color: #ccc;font-size: 14px;line-height:24px;background: url(../img/online.png) no-repeat 0 3px; padding-left: 30px;height: 24px;margin-right: 34px;}

@@ -5,9 +5,35 @@ var aNumCells = [];
 var aHandledCells = [];
 var bGameOver = false;
 
+var bTouchMoveEvent = false;
+var bTouchEndEvent = false;
+
+var count = 0;
+
+/*初始化设备信息*/
+var iBoxWidth = 720;
+var iBoxHeight = 500;
+var iNavWidth = 200;
+var iContainerWidth = 500;
+var iCellWidth = 100;
+var iCellSpaceWidth = 20;
+
+/*初始化触摸事件*/
+var oTouchEvent = {
+    sx : 0,
+    sy : 0,
+    ex : 0,
+    ey : 0,
+    sTime : 0,
+    eTime : 0
+}
+
 $(function(){
 
+    initSelfAdaption();
+    //console.log(aNumCells);
     initContrainer();
+    //console.log(aNumCells);
     initDataArray();
     initNumCells();
 
@@ -54,6 +80,10 @@ function initContrainer(){
             var oGridCell = $('#grid-cell-'+i+'-'+j);
 
             oGridCell.css(pos);
+            $('.grid-cell').css({
+                'height':iCellWidth+'px',
+                'width':iCellWidth+'px'
+            });
 
         }
     }
@@ -75,6 +105,8 @@ function initDataArray(){
 
 function initNumCells(){
 
+    console.log(aNumCells);
+
     $(".num-cell").remove();
 
     for( var i = 0;i < 4 ; i++){
@@ -95,8 +127,8 @@ function initNumCells(){
                 oNumCell.css({
                     'width': 0,
                     'height': 0,
-                    'top': pos.top + 50,
-                    'left': pos.left + 50
+                    'top': pos.top + iCellWidth*0.5,
+                    'left': pos.left + iCellWidth*0.5
                 });
             }else{
                 oNumCell.text(aNumCells[i][j]);
@@ -105,6 +137,11 @@ function initNumCells(){
                     'background': getNumCellBackground(aNumCells[i][j]),
                     'color': getNumCellColor(aNumCells[i][j]),
                     'font-size': getNumCellFontSize(aNumCells[i][j])
+                });
+                oNumCell.css('line-height',iCellWidth+'px');
+                oNumCell.css({
+                    'width':iCellWidth,
+                    'height':iCellWidth
                 });
             }
         }
@@ -159,18 +196,22 @@ $(document).keydown(function(evt){
     switch(evt.keyCode){
         case 37: 
         case 65://a
+            evt.preventDefault();
             moveLeft();
             break;
         case 38: 
         case 87://w
+            evt.preventDefault();
             moveTop();
             break;
         case 39: 
         case 68://d
+            evt.preventDefault();
             moveRight();
             break;
         case 40: 
         case 83://s
+            evt.preventDefault();
             moveDown();
             break;
     }
@@ -379,14 +420,169 @@ function newGame(){
 
 }
 
+//add by raleigh 2016-08-06 15:17:35
+function initSelfAdaption(){
+    var iDeviceWidth = window.screen.availWidth;
+    if(iDeviceWidth >= 720){
+        return;
+    }else{
+        iBoxWidth = iDeviceWidth;
+        iBoxHeight = iDeviceWidth;
+        iNavWidth = iDeviceWidth;
+        iContainerWidth = iDeviceWidth;
+        iCellWidth = iDeviceWidth*0.2;
+        iCellSpaceWidth = iDeviceWidth*0.04;
+    }
+
+    $('#game-box').css({
+        'width':iBoxWidth
+    });
+
+    $('#nav').css({
+        'width':iNavWidth+'px',
+        'height':iNavWidth*0.5+'px',
+    });
+
+    $('#nav strong,#nav a').css({
+        'width':iNavWidth*0.44+'px',
+        'height':iNavWidth*0.2+'px',
+        'line-height':iNavWidth*0.2+'px',
+        'font-size':iNavWidth*0.1+'px',
+        'margin':iCellSpaceWidth+'px'
+    });
+
+    $('#nav a').css({
+        'font-size':iNavWidth*0.05+'px'
+    });
+
+    $('#nav .score,#nav .history-score').css({
+        'width':iNavWidth*0.44+'px',
+        'height':iNavWidth*0.2+'px',
+        'line-height':iNavWidth*0.1+'px',
+        'margin':iCellSpaceWidth+'px'
+    });
+
+    $('#nav .score').find('p').eq(0).css({
+        'line-height':iNavWidth*0.09+'px',
+        'height':iNavWidth*0.09+'px',
+        'font-size':iNavWidth*0.05+'px'
+    });
+
+    $('#nav .score').find('p').eq(1).css({
+        'line-height':iNavWidth*0.11+'px',
+        'height':iNavWidth*0.11+'px',
+        'font-size':iNavWidth*0.09+'px'
+    });
+
+    $('#nav .history-score').find('p').eq(0).css({
+        'line-height':iNavWidth*0.09+'px',
+        'height':iNavWidth*0.09+'px',
+        'font-size':iNavWidth*0.05+'px'
+    });
+
+    $('#nav .history-score').find('p').eq(1).css({
+        'line-height':iNavWidth*0.11+'px',
+        'height':iNavWidth*0.11+'px',
+        'font-size':iNavWidth*0.09+'px'
+    });
+
+    $('#grid-container').css({
+        'height':iNavWidth+'px',
+        'width':iNavWidth+'px'
+    });
+
+}
+
+document.addEventListener('touchstart',function(evt){
+    initTouchEvent(evt);
+});
+
+document.addEventListener('touchmove',function(evt){
+    evt.preventDefault();
+    doSomeThing(evt);
+});
+
+document.addEventListener('touchend',function(){
+
+    bTouchEndEvent = true;
+
+});
+
+function initTouchEvent(evt){
+
+    if(bGameOver){
+        return;
+    }
+
+    for( var i = 0;i < 4 ; i++){
+        for( var j = 0;j < 4 ; j++){
+            if( $('#num-cell-'+i+'-'+j).is(':animated') ){
+                return false;
+            }
+        }
+    }
+
+    oTouchEvent.sx = evt.touches[0].pageX;
+    oTouchEvent.sy = evt.touches[0].pageY;
+    oTouchEvent.sTime = new Date().getTime();
+
+    bTouchMoveEvent = false;
+    bTouchEndEvent = false;
+}
+
+function doSomeThing(evt){
+
+    if(bTouchMoveEvent){
+        return;
+    }
+
+    oTouchEvent.ex = evt.touches[0].pageX;
+    oTouchEvent.ey = evt.touches[0].pageY;
+    oTouchEvent.eTime = new Date().getTime();
+
+    var dx = oTouchEvent.ex - oTouchEvent.sx;
+    var dy = oTouchEvent.ey - oTouchEvent.sy;
+
+    if(oTouchEvent.eTime - oTouchEvent.sTime < 50){
+        return;
+    }
+
+    if(Math.abs(dx)<iCellWidth && Math.abs(dy)<iCellWidth){
+        return;
+    }
+
+    if(Math.abs(dx)>=Math.abs(dy)){
+        if(dx>0){
+            //right
+            moveRight();
+        }else{
+            //left
+            moveLeft();
+        }
+    }else{
+        if(dy>0){
+            //down
+            moveDown();
+        }else{
+            //top
+            moveTop();
+        }
+    }
+
+    document.title = count++;
+
+    bTouchMoveEvent = true;
+
+}
+
 //------------------
 //--
 //------------------
 function getPosition(i,j){
 
     var pos = {
-        left: 20 + 120*j,
-        top: 20 + 120*i
+        left: iCellSpaceWidth + (iCellWidth+iCellSpaceWidth)*j,
+        top: iCellSpaceWidth + (iCellWidth+iCellSpaceWidth)*i,
     };
     return pos;
 
@@ -423,12 +619,12 @@ function getNumCellColor(num){
 function getNumCellFontSize(num){
 
     if( num > 99 && num <= 999){
-        return '48px';
+        return 48*iCellWidth/100+'px';
     }else if( num > 999){
-        return '36px';
+        return 36*iCellWidth/100+'px';
     }
 
-    return '60px';
+    return 60*iCellWidth/100+'px';
 }
 
 function canMoveLeft(){
@@ -546,13 +742,15 @@ function showGeneratedNum(i,j,num){
     var oNumCell = $('#num-cell-'+i+'-'+j);
     oNumCell.css({
         'background': getNumCellBackground(num),
-        'color': getNumCellColor(num)
+        'color': getNumCellColor(num),
+        'font-size':iCellWidth*60/100+'px',
+        'line-height':iCellWidth+'px'
     });
     oNumCell.text(num);
 
     oNumCell.animate({
-        'width': '100px',
-        'height': '100px',
+        'width': iCellWidth,
+        'height': iCellWidth,
         'top': getPosition(i,j).top + 'px',
         'left': getPosition(i,j).left + 'px'
     },50);

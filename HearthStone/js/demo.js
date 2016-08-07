@@ -84,6 +84,16 @@ $(function(){
             }
         });
 
+        /*导航条位置*/
+        $(document).scroll(function(){
+            var iHeight = $('#banner').height() - $('#banner').find('.nav').height();
+            if($(this).scrollTop() >= iHeight){
+                $('#banner').find('.nav').addClass('nav-fix');
+            }else{
+                $('#banner').find('.nav').removeClass('nav-fix');
+            }
+        });
+
     })();
 
     (function(){

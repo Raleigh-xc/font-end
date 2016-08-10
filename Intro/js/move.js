@@ -4,9 +4,15 @@ function getStyle(obj,attr){
 
 }
 
-function startMove(obj,json,fn){
+function startMove(obj,json,fn,baseNum){
 
     clearInterval(obj.timer);
+
+    var num = 8;
+
+    if(baseNum){
+        num = baseNum;
+    }
 
     obj.timer = setInterval(function(){
 
@@ -22,7 +28,7 @@ function startMove(obj,json,fn){
                 iCur = parseInt(getStyle(obj,attr));
             }
 
-            var iSpeed = (json[attr] - iCur)/8;
+            var iSpeed = (json[attr] - iCur)/num;
 
             iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
 

@@ -14,7 +14,23 @@
         width:100px;
         background:#eee;
       }
+      
+      #touchDiv:hover{
+        background:#5bc4ac;
+      }
+      
+      .touched{
+        background:#5bc4ac;
+      }
     </style>
+    <script>
+      window.onload = function(){
+        var oTouchDiv = document.getElementById('touchDIv');
+        oTouchDiv.ontouchstart = function(){
+          oTouchDiv.className = "touched";
+        }
+      }
+    </script>
   </head>
   <body>
     <section class="page-header">

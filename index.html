@@ -33,6 +33,9 @@
         var bTelephoneItemDisplay = false;
         oTouchDiv.addEventListener("touchstart",function(){
           console.log("touched");
+          
+          bTelephoneItemDisplay = !bTelephoneItemDisplay;
+          
           if(bTelephoneItemDisplay){
             oTouchDiv.classList.add("touched");
             oTouchDiv.classList.remove("un-touched");
@@ -40,7 +43,7 @@
             oTouchDiv.classList.remove("touched");
             oTouchDiv.classList.add("un-touched");
           }
-          bTelephoneItemDisplay = !bTelephoneItemDisplay;
+          
         });
       }
     </script>

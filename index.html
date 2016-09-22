@@ -26,10 +26,10 @@
     <script>
       window.onload = function(){
         var oTouchDiv = document.getElementById('touchDiv');
-        oTouchDiv.ontouchstart = function(){
+        oTouchDiv.addEventListener("touchstart",function(){
           console.log("touched");
           oTouchDiv.classList.toggle("touched");
-        }
+        });
       }
     </script>
   </head>

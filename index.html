@@ -27,6 +27,7 @@
       window.onload = function(){
         var oTouchDiv = document.getElementById('touchDIv');
         oTouchDiv.ontouchstart = function(){
+          console.log("touched");
           oTouchDiv.classList.toggle("touched");
         }
       }

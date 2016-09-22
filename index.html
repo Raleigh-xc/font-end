@@ -22,13 +22,25 @@
       .touched{
         background:#5bc4ac !important;
       }
+      
+      .un-touched{
+        background:#eee !important;
+      }
     </style>
     <script>
       window.onload = function(){
         var oTouchDiv = document.getElementById('touchDiv');
+        var bTelephoneItemDisplay = false;
         oTouchDiv.addEventListener("touchstart",function(){
           console.log("touched");
-          oTouchDiv.classList.toggle("touched");
+          if(bTelephoneItemDisplay){
+            oTouchDiv.classList.add("touched");
+            oTouchDiv.classList.remove("un-touched");
+          }else{
+            oTouchDiv.classList.remove("touched");
+            oTouchDiv.classList.add("un-touched");
+          }
+          bTelephoneItemDisplay = !bTelephoneItemDisplay;
         });
       }
     </script>

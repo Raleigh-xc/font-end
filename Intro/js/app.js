@@ -92,7 +92,7 @@ function doSwitch(){
             aContents[_iNow].isAnimated = true;
         }else{
             startMove(aContents[_iNow].querySelector('.title-underline'),{'width':700},function(){
-                startMove(aContents[_iNow].querySelector('.section'),{'height':220});
+                startMove(aContents[_iNow].querySelector('.section'),{'height':300});
                 aContents[_iNow].isAnimated = true;
             });
         }
